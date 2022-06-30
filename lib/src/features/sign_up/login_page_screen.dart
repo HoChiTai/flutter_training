@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../components/constant.dart';
-import '../../components/widgets/button_social.dart';
 import '../../components/widgets/input_field.dart';
 
 class LoginPage extends StatelessWidget {
@@ -74,9 +72,7 @@ class LoginPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Expanded(child: ButtonSocial(icon: ggImg, name: 'Google')),
                 SizedBox(width: 15),
-                Expanded(child: ButtonSocial(icon: fbImg, name: 'Facebook'))
               ],
             ),
           ),

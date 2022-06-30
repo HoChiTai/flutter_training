@@ -1,77 +1,79 @@
+import 'dart:async';
+
+import 'package:first_app/src/components/widgets/button_social.dart';
+import 'package:first_app/src/components/widgets/intro_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/constant.dart';
-import '../../components/widgets/button_social.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  int _currentPage = 1;
+  final PageController _pageController = PageController(
+    initialPage: 1,
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    Timer.periodic(const Duration(seconds: 1), (Timer timer) {
+      return setState(() {
+        if (_currentPage < 3) {
+          _currentPage++;
+        } else {
+          _currentPage = 1;
+        }
+        _pageController.animateToPage(
+          _currentPage,
+          duration: const Duration(milliseconds: 350),
+          curve: Curves.easeIn,
+        );
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          children: [
-            Image.asset(img1),
-            const Padding(
-              padding:
-                  EdgeInsets.only(top: 33, bottom: 20, left: 35, right: 35),
-              child: Text(
-                "Enjoy The New Arrival Product",
-                style: TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.w600,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 60, left: 55, right: 55),
-              child: Text(
-                "Get your dream item easily and safely with Shoesly. and get other interesting offers",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30)
-                  .copyWith(bottom: 20),
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Colors.black,
-                ),
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    "Get started".toUpperCase(),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Column(
+            children: [
+              Expanded(
+                child: PageView(
+                  controller: _pageController,
+                  children: const [
+                    IntroPage(
+                      img: img1,
+                      pageNumber: 1,
+                      headline: headline1,
+                      content: content,
                     ),
-                  ),
+                    IntroPage(
+                      img: img2,
+                      pageNumber: 2,
+                      headline: headline2,
+                      content: content,
+                    ),
+                    IntroPage(
+                      img: img3,
+                      pageNumber: 3,
+                      headline: headline3,
+                      content: content,
+                    ),
+                  ],
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Expanded(child: ButtonSocial(icon: ggImg, name: 'Google')),
-                  SizedBox(width: 15),
-                  Expanded(child: ButtonSocial(icon: fbImg, name: 'Facebook'))
-                ],
-              ),
-            ),
-          ],
+              const ButtonSocial(),
+            ],
+          ),
         ),
       ),
     );
