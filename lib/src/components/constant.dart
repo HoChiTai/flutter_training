@@ -2,6 +2,7 @@
 const img1 = 'assets/images/img1.png';
 const img2 = 'assets/images/img2.png';
 const img3 = 'assets/images/img3.png';
+const img4 = 'assets/images/img4.png';
 
 const content =
     "Get your dream item easily and safely with Shoesly. and get other interesting offers";

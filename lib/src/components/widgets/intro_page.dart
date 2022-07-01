@@ -5,11 +5,9 @@ import 'page_silder.dart';
 
 class IntroPage extends StatelessWidget {
   final String? img;
-  final int? pageNumber;
   final String? headline;
   final String? content;
-  const IntroPage(
-      {Key? key, this.img, this.pageNumber, this.headline, this.content})
+  const IntroPage({Key? key, this.img, this.headline, this.content})
       : super(key: key);
 
   @override
