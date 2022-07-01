@@ -38,12 +38,6 @@ class IntroPage extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.only(bottom: 50),
-        child: PageSlider(
-          pageNumber: pageNumber,
-        ),
-      ),
     ]);
   }
 }
