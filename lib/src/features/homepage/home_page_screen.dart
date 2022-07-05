@@ -218,10 +218,22 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: const [
-                      ProductItem(),
-                      ProductItem(),
-                      ProductItem(),
-                      ProductItem(),
+                      Padding(
+                        padding: EdgeInsets.only(right: 20),
+                        child: ProductItem(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 20),
+                        child: ProductItem(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 20),
+                        child: ProductItem(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 20),
+                        child: ProductItem(),
+                      ),
                     ],
                   ),
                 ),

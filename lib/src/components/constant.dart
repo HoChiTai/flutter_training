@@ -27,8 +27,10 @@ const svgDiscover = 'assets/svg/discover.svg';
 const svgDocument = 'assets/svg/document.svg';
 const svgHeart = 'assets/svg/heart.svg';
 const svgProfile = 'assets/svg/profile.svg';
+const svgBag = 'assets/svg/bag.svg';
+const svgSetting = 'assets/svg/setting.svg';
 
 const imgHomePage = "assets/images/homepage.png";
-
 const product1 = 'assets/images/product1.png';
 const product2 = 'assets/images/product2.png';
+const imgLeg = 'assets/images/leg.png';
