@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:first_app/src/components/constant.dart';
 import 'package:first_app/src/components/widgets/product_item.dart';
 import 'package:flutter/material.dart';
@@ -134,7 +135,10 @@ class _CategoryBrandsScreenState extends State<CategoryBrandsScreen> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},
-        icon: SvgPicture.asset(svgSetting),
+        icon: Badge(
+            position: const BadgePosition(top: -2, start: 16),
+            badgeColor: const Color(0xFFFF4C5E),
+            child: SvgPicture.asset(svgSetting)),
         label: const Text('FILTER'),
         backgroundColor: Colors.black,
       ),
