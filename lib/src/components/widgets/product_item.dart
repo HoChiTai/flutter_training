@@ -51,7 +51,7 @@ class _ProductItemState extends State<ProductItem> {
                         decoration:
                             IconDecoration(border: IconBorder(width: 2)),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 Padding(

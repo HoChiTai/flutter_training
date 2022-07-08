@@ -34,3 +34,4 @@ const imgHomePage = "assets/images/homepage.png";
 const product1 = 'assets/images/product1.png';
 const product2 = 'assets/images/product2.png';
 const imgLeg = 'assets/images/leg.png';
+const avatar1 = 'assets/images/avatar1.png';

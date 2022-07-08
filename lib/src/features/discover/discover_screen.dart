@@ -1,28 +1,77 @@
+import 'dart:ui';
+
 import 'package:badges/badges.dart';
 import 'package:first_app/src/components/constant.dart';
-import 'package:first_app/src/components/widgets/product_item.dart';
+import 'package:first_app/src/components/widgets/navbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CategoryBrandsScreen extends StatefulWidget {
-  const CategoryBrandsScreen({Key? key}) : super(key: key);
+import '../../components/widgets/product_item.dart';
+
+class DiscoverScreen extends StatefulWidget {
+  const DiscoverScreen({Key? key}) : super(key: key);
 
   @override
-  State<CategoryBrandsScreen> createState() => _CategoryBrandsScreenState();
+  State<DiscoverScreen> createState() => _DiscoverScreenState();
 }
 
-class _CategoryBrandsScreenState extends State<CategoryBrandsScreen> {
+class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 30).copyWith(top: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Discover',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Badge(
+                    position: const BadgePosition(top: 0, start: 14),
+                    badgeColor: const Color(0xFFFF4C5E),
+                    child: SvgPicture.asset(svgBag),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              decoration: BoxDecoration(
+                border: Border.all(width: 1, color: const Color(0xFFF3F3F3)),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 22),
+                child: TextField(
+                  textAlignVertical: TextAlignVertical.center,
+                  decoration: InputDecoration(
+                    hintStyle: const TextStyle(color: Color(0xFFB7B7B7)),
+                    border: InputBorder.none,
+                    hintText: "What are you looking for?",
+                    icon: SvgPicture.asset(svgSearch),
+                    suffixIcon: SvgPicture.asset(
+                      svgCamera,
+                      fit: BoxFit.scaleDown,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30)
-                  .copyWith(top: 30, bottom: 35),
+                  .copyWith(bottom: 35),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -30,7 +79,7 @@ class _CategoryBrandsScreenState extends State<CategoryBrandsScreen> {
                     Padding(
                       padding: EdgeInsets.only(right: 20),
                       child: Text(
-                        'Casual Shoes',
+                        'All',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
@@ -40,18 +89,7 @@ class _CategoryBrandsScreenState extends State<CategoryBrandsScreen> {
                     Padding(
                       padding: EdgeInsets.only(right: 20),
                       child: Text(
-                        'Running Shoes ',
-                        style: TextStyle(
-                          color: Color(0xFFB7B7B7),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 20),
-                      child: Text(
-                        'Basketball Shoes',
+                        'Nike',
                         style: TextStyle(
                           color: Color(0xFFB7B7B7),
                           fontSize: 20,
@@ -62,7 +100,29 @@ class _CategoryBrandsScreenState extends State<CategoryBrandsScreen> {
                     Padding(
                       padding: EdgeInsets.only(right: 20),
                       child: Text(
-                        'Football Shoes',
+                        'Jordan',
+                        style: TextStyle(
+                          color: Color(0xFFB7B7B7),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 20),
+                      child: Text(
+                        'Adidas',
+                        style: TextStyle(
+                          color: Color(0xFFB7B7B7),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 20),
+                      child: Text(
+                        'Reebok',
                         style: TextStyle(
                           color: Color(0xFFB7B7B7),
                           fontSize: 20,
@@ -141,32 +201,7 @@ class _CategoryBrandsScreenState extends State<CategoryBrandsScreen> {
         backgroundColor: Colors.black,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        shadowColor: Colors.white,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 20),
-          child: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 30),
-            child: Row(
-              children: [
-                SvgPicture.asset(svgSearch),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: SvgPicture.asset(svgBag),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }
