@@ -179,11 +179,31 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: const [
-                      BrandItem(name: 'Nike', svg: svgNike, amount: 1001),
-                      BrandItem(name: 'Puma', svg: svgPuma, amount: 601),
-                      BrandItem(name: 'Nike', svg: svgNike, amount: 709),
-                      BrandItem(name: 'Nike', svg: svgNike, amount: 505),
-                      BrandItem(name: 'Nike', svg: svgNike, amount: 505),
+                      BrandItem(
+                          name: 'Nike',
+                          svg: svgNike,
+                          amount: 1001,
+                          isChoose: false),
+                      BrandItem(
+                          name: 'Puma',
+                          svg: svgPuma,
+                          amount: 601,
+                          isChoose: false),
+                      BrandItem(
+                          name: 'Nike',
+                          svg: svgNike,
+                          amount: 709,
+                          isChoose: false),
+                      BrandItem(
+                          name: 'Nike',
+                          svg: svgNike,
+                          amount: 505,
+                          isChoose: false),
+                      BrandItem(
+                          name: 'Nike',
+                          svg: svgNike,
+                          amount: 505,
+                          isChoose: false),
                     ],
                   ),
                 ),

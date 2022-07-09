@@ -1,5 +1,7 @@
 import 'package:first_app/src/features/discover/discover_screen.dart';
 import 'package:first_app/src/features/discover/product_detail.dart';
+import 'package:first_app/src/features/discover/product_filter.dart';
+import 'package:first_app/src/features/discover/product_review.dart';
 import 'package:first_app/src/features/homepage/brand_list_screen.dart';
 import 'package:first_app/src/features/homepage/category_brands_screen.dart';
 import 'package:first_app/src/features/homepage/home_page_screen.dart';
@@ -12,6 +14,6 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: ProductDetail(),
+    home: ProductReview(),
   ));
 }

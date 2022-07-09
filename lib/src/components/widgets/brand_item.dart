@@ -5,7 +5,9 @@ class BrandItem extends StatelessWidget {
   final String? name;
   final String? svg;
   final int? amount;
-  const BrandItem({Key? key, this.name, this.svg, this.amount})
+  final bool isChoose;
+  const BrandItem(
+      {Key? key, this.name, this.svg, this.amount, this.isChoose = false})
       : super(key: key);
 
   @override
@@ -14,17 +16,34 @@ class BrandItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: const Color(0xFFF3F3F3),
-            ),
-            child: SvgPicture.asset(
-              svg!,
-              fit: BoxFit.scaleDown,
-            ),
+          Stack(
+            alignment: AlignmentDirectional.bottomEnd,
+            children: [
+              Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xFFF3F3F3),
+                ),
+                child: SvgPicture.asset(
+                  svg!,
+                  fit: BoxFit.scaleDown,
+                ),
+              ),
+              !isChoose
+                  ? Container()
+                  : Container(
+                      width: 20,
+                      height: 20,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Icon(Icons.check,
+                          size: 14, color: Colors.white),
+                    )
+            ],
           ),
           Padding(
             padding: const EdgeInsets.only(top: 14, bottom: 4),
