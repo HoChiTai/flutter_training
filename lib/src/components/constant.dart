@@ -12,9 +12,6 @@ const headline3 = "Goods Arrived On Time";
 
 const ggImg = 'assets/images/google.png';
 const fbImg = 'assets/images/facebook.png';
-
-// Home page
-
 const svgSearch = 'assets/svg/search.svg';
 const svgCamera = 'assets/svg/camera.svg';
 const svgNike = 'assets/svg/nike.svg';
@@ -29,9 +26,16 @@ const svgHeart = 'assets/svg/heart.svg';
 const svgProfile = 'assets/svg/profile.svg';
 const svgBag = 'assets/svg/bag.svg';
 const svgSetting = 'assets/svg/setting.svg';
+const svgBook = 'assets/svg/book.svg';
+const svgCard = 'assets/svg/card.svg';
+const svgNotification = 'assets/svg/notification.svg';
+const svgMobile = 'assets/svg/mobile.svg';
+const svgNote = 'assets/svg/note.svg';
+const svgShieldTick = 'assets/svg/shield-tick.svg';
 
 const imgHomePage = "assets/images/homepage.png";
 const product1 = 'assets/images/product1.png';
 const product2 = 'assets/images/product2.png';
 const imgLeg = 'assets/images/leg.png';
 const avatar1 = 'assets/images/avatar1.png';
+const profile = 'assets/images/profile.png';
